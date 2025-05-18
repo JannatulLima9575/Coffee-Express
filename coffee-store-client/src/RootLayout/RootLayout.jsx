@@ -1,11 +1,16 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router";
+import React from "react";
+import { Outlet } from "react-router";
+import Header from "../Components/Header";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Hello World</div>,
-  },
-]);
+const RootLayout = () => {
+  return (
+    <div>
+      <Header></Header>
+      <div className="max-w-7xl mx-auto">
+        <Outlet></Outlet>
+      </div>
+    </div>
+  );
+};
+
+export default RootLayout;
